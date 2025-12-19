@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M Dhanush | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:linear-gradient(135deg,#fdfbfb,#e8f0ff);color:#333}
+    header{background:linear-gradient(135deg,#dbeafe,#f0f9ff);padding:45px;text-align:center;animation:slideDown 1s}
+    header h1{font-size:38px;color:#1e3a8a}
+    header p{font-size:18px;margin-top:6px}
+    section{padding:50px 10%;animation:fadeIn 1s}
+    h2{color:#2563eb;margin-bottom:20px}
+    .card{background:#fff;padding:30px;border-radius:16px;
+          box-shadow:0 12px 25px rgba(0,0,0,.08);
+          margin-bottom:30px;transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+    ul{padding-left:20px}
+    ul li{margin-bottom:10px;line-height:1.6}
+    .tag span{display:inline-block;background:#eef2ff;
+              padding:8px 16px;margin:6px;border-radius:20px;font-size:14px}
+    .photo-upload{text-align:center}
+    .photo-upload img{width:160px;height:160px;border-radius:50%;
+                      border:4px solid #bfdbfe;object-fit:cover;margin-top:15px}
+    .btn{display:inline-block;padding:10px 22px;background:#2563eb;
+         color:#fff;text-decoration:none;border-radius:25px;margin-top:10px}
+    footer{text-align:center;padding:25px;background:#f0f9ff}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(25px)}to{opacity:1}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1}}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>M Dhanush</h1>
+  <p>B.Tech – Artificial Intelligence & Data Science</p>
+</header>
+
+<!-- PROFILE -->
+<section>
+  <h2>Profile</h2>
+  <div class="card">
+    Currently graduating in Computer Science and Engineering with specialization in
+    Artificial Intelligence and Data Science. Seeking a challenging role in a progressive
+    organization where my technical skills can be enhanced and contribute to organizational growth.
+  </div>
+</section>
+
+<!-- PHOTO -->
+<section>
+  <h2>Profile Photo</h2>
+  <div class="card photo-upload">
+    <input type="file" accept="image/*" onchange="loadPhoto(event)">
+    <img id="profilePhoto">
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+  <h2>Education</h2>
+  <div class="card">
+    <ul>
+      <li><strong>The Apollo University</strong><br>
+          B.Tech – Artificial Intelligence & Data Science (2022–2026)</li><br>
+      <li><strong>Sri Chaitanya Junior College, Tirupati</strong><br>
+          Intermediate (MPC) – 93% (2020–2022)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2>Technical Skills</h2>
+  <div class="card tag">
+    <span>Python</span><span>C</span><span>Data Science</span>
+    <span>Machine Learning</span><span>SQL</span>
+    <span>R Language</span><span>HTML</span><span>CSS</span>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+  <h2>Tools & Technologies</h2>
+  <div class="card">
+    <ul>
+      <li><b>Languages:</b> Python, C, R</li>
+      <li><b>Libraries:</b> NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</li>
+      <li><b>Databases:</b> MySQL</li>
+      <li><b>Tools:</b> Jupyter Notebook, VS Code</li>
+    </ul>
+  </div>
+</section>
+
+<!-- INTERNSHIP -->
+<section>
+  <h2>Internship</h2>
+  <div class="card">
+    <h3>Insights for Vision – Glasses Usage Analysis</h3>
+    <p><em>Duration: May 2025 – June 2025</em></p>
+    <ul>
+      <li>Analyzed key factors influencing the usage of glasses in developing countries.</li>
+      <li>Performed data cleaning, preprocessing, and exploratory data analysis (EDA).</li>
+      <li>Used visualization techniques to identify trends and patterns.</li>
+      <li>Generated actionable insights to support vision care awareness.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Multimodal Emotion Detection 😊</h3>
+    <ul>
+      <li>Emotion recognition using facial expressions, speech, and text.</li>
+      <li>Applied ML/DL models for classification.</li>
+      <li>Improved accuracy using multimodal fusion.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Temperature Converter 🌡️</h3>
+    <ul>
+      <li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
+      <li>Implemented image upload option.</li>
+      <li>Designed a simple and user-friendly interface.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Prediction, Recommendation & Sentiment Analysis</h3>
+    <ul>
+      <li>Built prediction models using ML algorithms.</li>
+      <li>Developed recommendation systems.</li>
+      <li>Performed sentiment analysis using NLP.</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+<section>
+  <h2>Certifications</h2>
+  <div class="card">
+    <ul>
+      <li>NPTEL – Data Science for Engineers</li>
+      <li>Google Cloud Computing Foundation</li>
+    </ul>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section>
+  <h2>Resume</h2>
+  <div class="card">
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <h2>Contact</h2>
+  <div class="card">
+    Email: malepatidhanush@gmail.com<br>
+    Phone: 8328105785
+  </div>
+</section>
+
+<footer>
+  © 2025 | M Dhanush
+</footer>
+
+<script>
+  function loadPhoto(e){
+    document.getElementById("profilePhoto").src =
+    URL.createObjectURL(e.target.files[0]);
+  }
+</script>
+
+</body>
+</html>
