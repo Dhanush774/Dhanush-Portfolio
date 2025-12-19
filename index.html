@@ -49,6 +49,46 @@ body{
   font-weight:500;
 }
 
+/* HERO BUTTONS */
+.hero-links{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  padding:12px 34px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  color:#fff;
+  transition:all 0.3s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* GitHub */
+.hero-btn.github{
+  background:linear-gradient(135deg,#24292e,#4b5563);
+}
+
+.hero-btn.github:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 16px 35px rgba(0,0,0,0.35);
+}
+
+/* LinkedIn */
+.hero-btn.linkedin{
+  background:linear-gradient(135deg,#0a66c2,#38bdf8);
+}
+
+.hero-btn.linkedin:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 16px 35px rgba(56,189,248,0.45);
+}
+
 /* SECTIONS */
 section{
   padding:55px 10%;
@@ -132,66 +172,25 @@ footer{
   from{opacity:0;transform:translateY(30px)}
   to{opacity:1}
 }
-  .links{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
-}
-
-/* Common button style */
-.link-btn{
-  padding:14px 36px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  font-size:16px;
-  color:#fff;
-  transition:all 0.3s ease;
-  box-shadow:0 12px 25px rgba(0,0,0,0.15);
-}
-
-/* GitHub button */
-.link-btn.github{
-  background:linear-gradient(135deg,#24292e,#4b5563);
-}
-
-.link-btn.github:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 18px 35px rgba(0,0,0,0.3);
-}
-
-/* LinkedIn button */
-.link-btn.linkedin{
-  background:linear-gradient(135deg,#0a66c2,#38bdf8);
-}
-
-.link-btn.linkedin:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 18px 35px rgba(56,189,248,0.45);
-}
-
 </style>
 </head>
-<body>
 
+<body>
 
 <!-- HERO -->
 <div class="hero">
   <img src="photo.jpg" alt="Profile Photo">
   <h1>M Dhanush</h1>
   <p>Artificial Intelligence & Data Science Student</p>
+
+  <div class="hero-links">
+    <a class="hero-btn github" href="https://github.com/Dhanush774" target="_blank">GitHub</a>
+    <a class="hero-btn linkedin" href="https://www.linkedin.com/in/dhanush-m-934195269" target="_blank">LinkedIn</a>
+  </div>
 </div>
 
 <section>
 <h2>Profile</h2>
-  <section>
-  <h2>Links</h2>
-  <div class="card links">
-    <a href="https://github.com/Dhanush774" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/dhanush-m-934195269" target="_blank">LinkedIn</a>
-  </div>
-</section>
 <div class="card">
 Currently graduating in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.
 Seeking a challenging opportunity where data-driven and machine learning skills can contribute to organizational growth.
@@ -237,7 +236,7 @@ Intermediate (MPC) – 92% (2020–2022)</li>
 <strong>Belong</strong><br>
 <span>Insights for Vision – Glasses Usage Analysis</span><br>
 <em>Domain: Data Science</em><br>
-<em>Duration: May 2025 – June 2025</em
+<em>Duration: May 2025 – June 2025</em>
 <ul>
 <li>Conducted data cleaning and exploratory data analysis (EDA).</li>
 <li>Worked on Dot Glasses potential customer survey dataset.</li>
@@ -264,7 +263,6 @@ Intermediate (MPC) – 92% (2020–2022)</li>
 <ul>
 <li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
 <li>Focused on clean logic and accurate calculations.</li>
-<li>Designed a simple and intuitive interface.</li>
 </ul>
 </div>
 
@@ -310,6 +308,7 @@ Intermediate (MPC) – 92% (2020–2022)</li>
 
 </body>
 </html>
+
 
 
 
