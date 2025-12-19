@@ -8,7 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
 
 body{
   background:linear-gradient(120deg,#fefce8,#ecfeff,#fdf2f8);
@@ -17,7 +22,7 @@ body{
 
 /* HERO */
 .hero{
-  padding:70px 20px 50px;
+  padding:70px 20px 55px;
   text-align:center;
   animation:fadeDown 1.2s ease;
 }
@@ -29,7 +34,6 @@ body{
   object-fit:cover;
   border:6px solid #e9d5ff;
   box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  cursor:pointer;
 }
 
 .hero h1{
@@ -69,6 +73,16 @@ h2{
 
 .card:hover{
   transform:translateY(-8px);
+  box-shadow:0 25px 45px rgba(0,0,0,0.12);
+}
+
+ul{
+  padding-left:22px;
+}
+
+ul li{
+  margin-bottom:10px;
+  line-height:1.7;
 }
 
 /* TAGS */
@@ -92,13 +106,15 @@ h2{
   color:#fff;
   text-decoration:none;
   box-shadow:0 12px 28px rgba(124,58,237,0.45);
-  cursor:pointer;
+  transition:0.3s;
 }
 
 .btn:hover{
   transform:scale(1.05);
+  box-shadow:0 20px 40px rgba(236,72,153,0.5);
 }
 
+/* FOOTER */
 footer{
   background:#faf5ff;
   text-align:center;
@@ -106,11 +122,7 @@ footer{
   font-size:14px;
 }
 
-/* Hide inputs */
-input[type="file"]{
-  display:none;
-}
-
+/* ANIMATIONS */
 @keyframes fadeDown{
   from{opacity:0;transform:translateY(-40px)}
   to{opacity:1}
@@ -127,12 +139,7 @@ input[type="file"]{
 
 <!-- HERO -->
 <div class="hero">
-  <!-- Hidden photo input -->
-  <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(event)">
-  
-  <!-- Click image to upload -->
-  <img id="profilePhoto" src="https://via.placeholder.com/190" onclick="document.getElementById('photoInput').click()">
-
+  <img src="profile.jpg" alt="Profile Photo">
   <h1>M Dhanush</h1>
   <p>Artificial Intelligence & Data Science Student</p>
 </div>
@@ -140,7 +147,8 @@ input[type="file"]{
 <section>
 <h2>Profile</h2>
 <div class="card">
-Currently graduating in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science. Seeking a challenging opportunity where data-driven and machine learning skills can contribute to organizational growth.
+Currently graduating in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science.
+Seeking a challenging opportunity where data-driven and machine learning skills can contribute to organizational growth.
 </div>
 </section>
 
@@ -148,8 +156,10 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <h2>Education</h2>
 <div class="card">
 <ul>
-<li><strong>The Apollo University</strong><br>B.Tech – AI & DS (2022–2026)</li>
-<li><strong>Sri Chaitanya Junior College, Tirupati</strong><br>Intermediate (MPC) – 93% (2020–2022)</li>
+<li><strong>The Apollo University</strong><br>
+B.Tech – Artificial Intelligence & Data Science (2022–2026)</li>
+<li><strong>Sri Chaitanya Junior College, Tirupati</strong><br>
+Intermediate (MPC) – 93% (2020–2022)</li>
 </ul>
 </div>
 </section>
@@ -157,7 +167,22 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <section>
 <h2>Skills</h2>
 <div class="card tags">
-<span>Python</span><span>Machine Learning</span><span>Data Science</span><span>SQL</span><span>R Language</span>
+<span>Python</span>
+<span>Machine Learning</span>
+<span>Data Science</span>
+<span>SQL</span>
+<span>R Language</span>
+</div>
+</section>
+
+<section>
+<h2>Tools & Technologies</h2>
+<div class="card">
+<ul>
+<li><strong>Libraries:</strong> NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</li>
+<li><strong>Databases:</strong> MySQL</li>
+<li><strong>Tools:</strong> Jupyter Notebook, VS Code</li>
+</ul>
 </div>
 </section>
 
@@ -167,28 +192,52 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <h3>Insights for Vision – Glasses Usage Analysis</h3>
 <p><em>May 2025 – June 2025</em></p>
 <ul>
-<li>Conducted data cleaning and EDA on survey datasets.</li>
-<li>Identified global and country-level usage patterns.</li>
-<li>Generated insights for vision care awareness.</li>
+<li>Conducted data cleaning and exploratory data analysis (EDA).</li>
+<li>Worked on Dot Glasses potential customer survey dataset.</li>
+<li>Identified global and country-level usage trends.</li>
+<li>Generated actionable insights for vision care awareness.</li>
 </ul>
 </div>
 </section>
 
 <section>
 <h2>Projects</h2>
+
 <div class="card">
 <h3>Multimodal Emotion Detection</h3>
 <ul>
-<li>Emotion detection using facial, speech, and text data.</li>
-<li>Applied machine learning algorithms.</li>
+<li>Detected human emotions using facial expressions, speech, and text data.</li>
+<li>Applied machine learning algorithms for emotion classification.</li>
+<li>Improved accuracy through multimodal feature fusion.</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Temperature Converter</h3>
 <ul>
-<li>Celsius, Fahrenheit, Kelvin conversion.</li>
-<li>Photo upload feature included.</li>
+<li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
+<li>Focused on clean logic and accurate calculations.</li>
+<li>Designed a simple and intuitive interface.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Prediction, Recommendation & Sentiment Analysis</h3>
+<ul>
+<li>Built prediction models using supervised learning techniques.</li>
+<li>Developed recommendation systems based on user behavior.</li>
+<li>Performed sentiment analysis using NLP techniques.</li>
+</ul>
+</div>
+
+</section>
+
+<section>
+<h2>Certifications</h2>
+<div class="card">
+<ul>
+<li><strong>NPTEL</strong> – Data Science for Engineers</li>
+<li><strong>GCCF</strong> – Google Cloud Computing Foundation</li>
 </ul>
 </div>
 </section>
@@ -196,8 +245,7 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <section>
 <h2>Resume</h2>
 <div class="card">
-<!-- Option 1: If resume.pdf exists -->
-<a class="btn" href="resume.pdf" download>Download Resume</a>
+<a class="btn" href="Dhanush_resume.pdf" download>Download Resume</a>
 </div>
 </section>
 
@@ -213,14 +261,8 @@ Currently graduating in Computer Science and Engineering with specialization in 
 © 2025 | Student Portfolio
 </footer>
 
-<script>
-function loadPhoto(e){
-  document.getElementById("profilePhoto").src =
-    URL.createObjectURL(e.target.files[0]);
-}
-</script>
-
 </body>
 </html>
+
 
 
