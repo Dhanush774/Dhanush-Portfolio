@@ -8,12 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 
 body{
   background:linear-gradient(120deg,#fefce8,#ecfeff,#fdf2f8);
@@ -34,6 +29,7 @@ body{
   object-fit:cover;
   border:6px solid #e9d5ff;
   box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  cursor:pointer;
 }
 
 .hero h1{
@@ -73,16 +69,6 @@ h2{
 
 .card:hover{
   transform:translateY(-8px);
-  box-shadow:0 25px 45px rgba(0,0,0,0.12);
-}
-
-ul{
-  padding-left:22px;
-}
-
-ul li{
-  margin-bottom:10px;
-  line-height:1.7;
 }
 
 /* TAGS */
@@ -106,14 +92,13 @@ ul li{
   color:#fff;
   text-decoration:none;
   box-shadow:0 12px 28px rgba(124,58,237,0.45);
-  animation:pulse 2.5s infinite;
+  cursor:pointer;
 }
 
 .btn:hover{
   transform:scale(1.05);
 }
 
-/* FOOTER */
 footer{
   background:#faf5ff;
   text-align:center;
@@ -121,21 +106,19 @@ footer{
   font-size:14px;
 }
 
-/* ANIMATIONS */
+/* Hide inputs */
+input[type="file"]{
+  display:none;
+}
+
 @keyframes fadeDown{
   from{opacity:0;transform:translateY(-40px)}
-  to{opacity:1;transform:translateY(0)}
+  to{opacity:1}
 }
 
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(236,72,153,.6)}
-  70%{box-shadow:0 0 0 18px rgba(236,72,153,0)}
-  100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+  to{opacity:1}
 }
 </style>
 </head>
@@ -144,9 +127,12 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <input type="file" accept="image/*" onchange="loadPhoto(event)">
-  <br><br>
-  <img id="profilePhoto">
+  <!-- Hidden photo input -->
+  <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(event)">
+  
+  <!-- Click image to upload -->
+  <img id="profilePhoto" src="https://via.placeholder.com/190" onclick="document.getElementById('photoInput').click()">
+
   <h1>M Dhanush</h1>
   <p>Artificial Intelligence & Data Science Student</p>
 </div>
@@ -171,22 +157,7 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <section>
 <h2>Skills</h2>
 <div class="card tags">
-<span>Python</span>
-<span>Machine Learning</span>
-<span>Data Science</span>
-<span>SQL</span>
-<span>R Language</span>
-</div>
-</section>
-
-<section>
-<h2>Tools & Technologies</h2>
-<div class="card">
-<ul>
-<li><strong>Libraries:</strong> NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</li>
-<li><strong>Databases:</strong> MySQL</li>
-<li><strong>Tools:</strong> Jupyter Notebook, VS Code</li>
-</ul>
+<span>Python</span><span>Machine Learning</span><span>Data Science</span><span>SQL</span><span>R Language</span>
 </div>
 </section>
 
@@ -194,51 +165,38 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <h2>Internship</h2>
 <div class="card">
 <h3>Insights for Vision – Glasses Usage Analysis</h3>
-<p><em>Duration: May 2025 – June 2025</em></p>
+<p><em>May 2025 – June 2025</em></p>
 <ul>
-<li>Conducted data cleaning and exploratory data analysis (EDA).</li>
-<li>Analyzed Dot Glasses potential customer survey dataset.</li>
-<li>Identified global and country-level usage trends.</li>
-<li>Generated insights to support vision care awareness.</li>
+<li>Conducted data cleaning and EDA on survey datasets.</li>
+<li>Identified global and country-level usage patterns.</li>
+<li>Generated insights for vision care awareness.</li>
 </ul>
 </div>
 </section>
 
 <section>
 <h2>Projects</h2>
-
 <div class="card">
 <h3>Multimodal Emotion Detection</h3>
 <ul>
-<li>Detected human emotions using facial expressions, speech, and text.</li>
-<li>Applied machine learning algorithms for classification.</li>
-<li>Improved accuracy using multimodal feature fusion.</li>
+<li>Emotion detection using facial, speech, and text data.</li>
+<li>Applied machine learning algorithms.</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Temperature Converter</h3>
 <ul>
-<li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
-<li>Included photo upload functionality.</li>
-<li>Designed clean and intuitive interface.</li>
+<li>Celsius, Fahrenheit, Kelvin conversion.</li>
+<li>Photo upload feature included.</li>
 </ul>
 </div>
-
-<div class="card">
-<h3>Prediction, Recommendation & Sentiment Analysis</h3>
-<ul>
-<li>Built predictive models using supervised learning.</li>
-<li>Developed recommendation systems.</li>
-<li>Performed sentiment analysis using NLP techniques.</li>
-</ul>
-</div>
-
 </section>
 
 <section>
 <h2>Resume</h2>
 <div class="card">
+<!-- Option 1: If resume.pdf exists -->
 <a class="btn" href="resume.pdf" download>Download Resume</a>
 </div>
 </section>
@@ -258,10 +216,11 @@ Currently graduating in Computer Science and Engineering with specialization in 
 <script>
 function loadPhoto(e){
   document.getElementById("profilePhoto").src =
-  URL.createObjectURL(e.target.files[0]);
+    URL.createObjectURL(e.target.files[0]);
 }
 </script>
 
 </body>
 </html>
+
 
