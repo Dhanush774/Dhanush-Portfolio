@@ -1,187 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>M Dhanush | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Student Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    body{background:linear-gradient(135deg,#fdfbfb,#e8f0ff);color:#333}
-    header{background:linear-gradient(135deg,#dbeafe,#f0f9ff);padding:45px;text-align:center;animation:slideDown 1s}
-    header h1{font-size:38px;color:#1e3a8a}
-    header p{font-size:18px;margin-top:6px}
-    section{padding:50px 10%;animation:fadeIn 1s}
-    h2{color:#2563eb;margin-bottom:20px}
-    .card{background:#fff;padding:30px;border-radius:16px;
-          box-shadow:0 12px 25px rgba(0,0,0,.08);
-          margin-bottom:30px;transition:.3s}
-    .card:hover{transform:translateY(-6px)}
-    ul{padding-left:20px}
-    ul li{margin-bottom:10px;line-height:1.6}
-    .tag span{display:inline-block;background:#eef2ff;
-              padding:8px 16px;margin:6px;border-radius:20px;font-size:14px}
-    .photo-upload{text-align:center}
-    .photo-upload img{width:160px;height:160px;border-radius:50%;
-                      border:4px solid #bfdbfe;object-fit:cover;margin-top:15px}
-    .btn{display:inline-block;padding:10px 22px;background:#2563eb;
-         color:#fff;text-decoration:none;border-radius:25px;margin-top:10px}
-    footer{text-align:center;padding:25px;background:#f0f9ff}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(25px)}to{opacity:1}}
-    @keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1}}
-  </style>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(120deg,#fefce8,#ecfeff,#fdf2f8);
+  color:#1f2937;
+}
+
+/* HERO */
+.hero{
+  padding:70px 20px 50px;
+  text-align:center;
+  animation:fadeDown 1.2s ease;
+}
+
+.hero img{
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  object-fit:cover;
+  border:6px solid #e9d5ff;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.hero h1{
+  margin-top:18px;
+  font-size:36px;
+  color:#6b21a8;
+}
+
+.hero p{
+  margin-top:6px;
+  font-size:18px;
+  color:#7c3aed;
+  font-weight:500;
+}
+
+/* SECTIONS */
+section{
+  padding:55px 10%;
+  animation:fadeUp 1s ease;
+}
+
+h2{
+  font-size:26px;
+  margin-bottom:22px;
+  color:#6b21a8;
+}
+
+/* CARD */
+.card{
+  background:#ffffff;
+  padding:30px;
+  border-radius:22px;
+  box-shadow:0 18px 35px rgba(0,0,0,0.08);
+  margin-bottom:35px;
+  transition:0.35s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 45px rgba(0,0,0,0.12);
+}
+
+ul{
+  padding-left:22px;
+}
+
+ul li{
+  margin-bottom:10px;
+  line-height:1.7;
+}
+
+/* TAGS */
+.tags span{
+  display:inline-block;
+  background:linear-gradient(135deg,#a855f7,#ec4899);
+  color:#fff;
+  padding:9px 18px;
+  margin:6px;
+  border-radius:999px;
+  font-size:14px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:999px;
+  font-weight:600;
+  background:linear-gradient(135deg,#7c3aed,#ec4899);
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 12px 28px rgba(124,58,237,0.45);
+  animation:pulse 2.5s infinite;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+  background:#faf5ff;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(236,72,153,.6)}
+  70%{box-shadow:0 0 0 18px rgba(236,72,153,0)}
+  100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
+  <input type="file" accept="image/*" onchange="loadPhoto(event)">
+  <br><br>
+  <img id="profilePhoto">
   <h1>M Dhanush</h1>
-  <p>B.Tech – Artificial Intelligence & Data Science</p>
-</header>
+  <p>Artificial Intelligence & Data Science Student</p>
+</div>
 
-<!-- PROFILE -->
 <section>
-  <h2>Profile</h2>
-  <div class="card">
-    Currently graduating in Computer Science and Engineering with specialization in
-    Artificial Intelligence and Data Science. Seeking a challenging role in a progressive
-    organization where my technical skills can be enhanced and contribute to organizational growth.
-  </div>
+<h2>Profile</h2>
+<div class="card">
+Currently graduating in Computer Science and Engineering with specialization in Artificial Intelligence and Data Science. Seeking a challenging opportunity where data-driven and machine learning skills can contribute to organizational growth.
+</div>
 </section>
 
-<!-- PHOTO -->
 <section>
-  <h2>Profile Photo</h2>
-  <div class="card photo-upload">
-    <input type="file" accept="image/*" onchange="loadPhoto(event)">
-    <img id="profilePhoto">
-  </div>
+<h2>Education</h2>
+<div class="card">
+<ul>
+<li><strong>The Apollo University</strong><br>B.Tech – AI & DS (2022–2026)</li>
+<li><strong>Sri Chaitanya Junior College, Tirupati</strong><br>Intermediate (MPC) – 93% (2020–2022)</li>
+</ul>
+</div>
 </section>
 
-<!-- EDUCATION -->
 <section>
-  <h2>Education</h2>
-  <div class="card">
-    <ul>
-      <li><strong>The Apollo University</strong><br>
-          B.Tech – Artificial Intelligence & Data Science (2022–2026)</li><br>
-      <li><strong>Sri Chaitanya Junior College, Tirupati</strong><br>
-          Intermediate (MPC) – 93% (2020–2022)</li>
-    </ul>
-  </div>
+<h2>Skills</h2>
+<div class="card tags">
+<span>Python</span>
+<span>Machine Learning</span>
+<span>Data Science</span>
+<span>SQL</span>
+<span>R Language</span>
+</div>
 </section>
 
-<!-- SKILLS -->
 <section>
-  <h2>Technical Skills</h2>
-  <div class="card tag">
-    <span>Python</span><span>C</span><span>Data Science</span>
-    <span>Machine Learning</span><span>SQL</span>
-    <span>R Language</span><span>HTML</span><span>CSS</span>
-  </div>
+<h2>Tools & Technologies</h2>
+<div class="card">
+<ul>
+<li><strong>Libraries:</strong> NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</li>
+<li><strong>Databases:</strong> MySQL</li>
+<li><strong>Tools:</strong> Jupyter Notebook, VS Code</li>
+</ul>
+</div>
 </section>
 
-<!-- TOOLS -->
 <section>
-  <h2>Tools & Technologies</h2>
-  <div class="card">
-    <ul>
-      <li><b>Languages:</b> Python, C, R</li>
-      <li><b>Libraries:</b> NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn</li>
-      <li><b>Databases:</b> MySQL</li>
-      <li><b>Tools:</b> Jupyter Notebook, VS Code</li>
-    </ul>
-  </div>
+<h2>Internship</h2>
+<div class="card">
+<h3>Insights for Vision – Glasses Usage Analysis</h3>
+<p><em>Duration: May 2025 – June 2025</em></p>
+<ul>
+<li>Conducted data cleaning and exploratory data analysis (EDA).</li>
+<li>Analyzed Dot Glasses potential customer survey dataset.</li>
+<li>Identified global and country-level usage trends.</li>
+<li>Generated insights to support vision care awareness.</li>
+</ul>
+</div>
 </section>
 
-<!-- INTERNSHIP -->
 <section>
-  <h2>Internship</h2>
-  <div class="card">
-    <h3>Insights for Vision – Glasses Usage Analysis</h3>
-    <p><em>Duration: May 2025 – June 2025</em></p>
-    <ul>
-      <li>Analyzed key factors influencing the usage of glasses in developing countries.</li>
-      <li>Performed data cleaning, preprocessing, and exploratory data analysis (EDA).</li>
-      <li>Used visualization techniques to identify trends and patterns.</li>
-      <li>Generated actionable insights to support vision care awareness.</li>
-    </ul>
-  </div>
-</section>
+<h2>Projects</h2>
 
-<!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
+<div class="card">
+<h3>Multimodal Emotion Detection</h3>
+<ul>
+<li>Detected human emotions using facial expressions, speech, and text.</li>
+<li>Applied machine learning algorithms for classification.</li>
+<li>Improved accuracy using multimodal feature fusion.</li>
+</ul>
+</div>
 
-  <div class="card">
-    <h3>Multimodal Emotion Detection 😊</h3>
-    <ul>
-      <li>Emotion recognition using facial expressions, speech, and text.</li>
-      <li>Applied ML/DL models for classification.</li>
-      <li>Improved accuracy using multimodal fusion.</li>
-    </ul>
-  </div>
+<div class="card">
+<h3>Temperature Converter</h3>
+<ul>
+<li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
+<li>Included photo upload functionality.</li>
+<li>Designed clean and intuitive interface.</li>
+</ul>
+</div>
 
-  <div class="card">
-    <h3>Temperature Converter 🌡️</h3>
-    <ul>
-      <li>Converted Celsius, Fahrenheit, and Kelvin values.</li>
-      <li>Implemented image upload option.</li>
-      <li>Designed a simple and user-friendly interface.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Prediction, Recommendation & Sentiment Analysis</h3>
-    <ul>
-      <li>Built prediction models using ML algorithms.</li>
-      <li>Developed recommendation systems.</li>
-      <li>Performed sentiment analysis using NLP.</li>
-    </ul>
-  </div>
+<div class="card">
+<h3>Prediction, Recommendation & Sentiment Analysis</h3>
+<ul>
+<li>Built predictive models using supervised learning.</li>
+<li>Developed recommendation systems.</li>
+<li>Performed sentiment analysis using NLP techniques.</li>
+</ul>
+</div>
 
 </section>
 
-<!-- CERTIFICATIONS -->
 <section>
-  <h2>Certifications</h2>
-  <div class="card">
-    <ul>
-      <li>NPTEL – Data Science for Engineers</li>
-      <li>Google Cloud Computing Foundation</li>
-    </ul>
-  </div>
+<h2>Resume</h2>
+<div class="card">
+<a class="btn" href="resume.pdf" download>Download Resume</a>
+</div>
 </section>
 
-<!-- RESUME -->
 <section>
-  <h2>Resume</h2>
-  <div class="card">
-    <a class="btn" href="resume.pdf" download>Download Resume</a>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section>
-  <h2>Contact</h2>
-  <div class="card">
-    Email: malepatidhanush@gmail.com<br>
-    Phone: 8328105785
-  </div>
+<h2>Contact</h2>
+<div class="card">
+📧 malepatidhanush@gmail.com <br>
+📞 8328105785
+</div>
 </section>
 
 <footer>
-  © 2025 | M Dhanush
+© 2025 | Student Portfolio
 </footer>
 
 <script>
-  function loadPhoto(e){
-    document.getElementById("profilePhoto").src =
-    URL.createObjectURL(e.target.files[0]);
-  }
+function loadPhoto(e){
+  document.getElementById("profilePhoto").src =
+  URL.createObjectURL(e.target.files[0]);
+}
 </script>
 
 </body>
 </html>
+
